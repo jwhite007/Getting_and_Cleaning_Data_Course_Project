@@ -26,15 +26,18 @@ Files from the original data used in run_analysis.R
 
 ##The Script
 
-run_analysis.R contains a script which combines the summary values for the test and training sets from the origianl data and extracts the means and standard deviations of the feature measurements. It then outputs a text file with a tidy dataset with the mean of the extracted data for the replicates of each activity for each subject.
+run_analysis.R contains a script which combines the summary values for the test and training sets from the origianl data and extracts the means and standard deviations of the feature calculations. It then outputs a text file with a tidy dataset with the mean of the extracted data for the replicates of each activity for each subject.
 
-- Clone this repository and unzip the included zip file. If you've previously obtained the zip file from elsewhere, you can just download run_analyis.R into the directory which contains the uncompressed contents of the zip file.
+###Instructions
+- Clone this repository and unzip the included zip file. If you've previously obtained the zip file from elsewhere, you can just download run_analysis.R into the directory which contains the uncompressed contents of the zip file.
 
 - Ensure that both run_analysis.R and the unzipped contents of the zip file are in your working directory. The uncompressed zip file will result in a directory named "UCI HAR Dataset" in your working directory.
 
 - Ensure that the dplyr package is installed in your R version.
 
 - From R issue "source('run_analysis.R')"
+
+- The output will result in a dataset contained in both a data frame, ds, in your workspace and a text file, UciHarSub.txt, written to your working directory.
 
 ###Details
 1. Functions from the dplyr package are used and so dplyr is loaded.
