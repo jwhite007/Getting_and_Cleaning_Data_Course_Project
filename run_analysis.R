@@ -22,12 +22,12 @@ ungroup
 
 rm('ds_test', 'ds_train', 'ntds')
 
-ds$activity[ds$activity == c(1:6)] <- c('walking',
-                                        'walking up',
-                                        'walking down',
-                                        'sitting',
-                                        'standing',
-                                        'laying')
+ds$activity[ds$activity == c(1:6)] <- c('Walking',
+                                        'WalkingUp',
+                                        'WalkingDown',
+                                        'Sitting',
+                                        'Standing',
+                                        'Laying')
 colnames(ds) <- sub('-', '',
                     sub('-s', 'S',
                         sub('-m', 'M',
@@ -37,4 +37,4 @@ colnames(ds) <- sub('-', '',
 
 ds <- ds[order(ds$set, ds$subject, ds$activity),]
 
-write.table(ds, 'ds.txt', row.names = FALSE)
+write.table(ds, 'UciHarSub.txt', row.names = FALSE)
