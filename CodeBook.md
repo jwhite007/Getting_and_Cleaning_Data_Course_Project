@@ -1,12 +1,79 @@
-Code Book
-=
+#Code Book
 
-Date data set downloaded: Dec 08 2014
+##The Original Data
 
-system.time(data.frame(matrix(scan('UCI HAR Dataset/train/X_train.txt'), 4124472 / 561, 561, byrow = TRUE)))  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user  system elapsed  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.705   0.153  10.739
+Downloaded on Dec 08, 2014  
+The original data is in the samsung_data.zip file contained in the repository.   
 
-system.time(read.table('UCI HAR Dataset/train/X_train.txt'))  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user  system elapsed  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;33.874   0.247  34.340
+[Human Activity Recognition Using Smartphones Data Set ](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+>Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+www.smartlab.ws
+
+Signals were obtained from the acceleromters and gyroscopes of smart phones (Samsung Galaxy S II) worn by 30 subjects between the ages of 19 and 48 doing various activities in replicate. These subjects were randomly segregated into a training set (70% of the subjects) and a test set (30% of the subjects).
+
+The activities in the original data are coded as numerics, and the numerics assigned to each activity are noted below:
+- 1 WALKING
+- 2 WALKING_UPSTAIRS
+- 3 WALKING_DOWNSTAIRS
+- 4 SITTING
+- 5 STANDING
+- 6 LAYING
+
+These signals were pre-processed and were then sampled in fixed-width sliding windows of 2.56 secs and 50% overlap (128 readings). Detailed information can be found in README.txt included with the original data.
+
+"The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ." 't' denotes time domain signals. The acceleration signals were separated into body and gravity acceleration signals. Jerk signals were derived from this data. In addition, a Fast Fourier Transform (FFT) was applied to some of these signals and are labeled with an 'f' to denote frequency domain signals. Detailed information can be found in features_info.txt included with the original data.
+
+The features obtained are denoted as such:
+- tBodyAcc-XYZ
+- tGravityAcc-XYZ
+- tBodyAccJerk-XYZ
+- tBodyGyro-XYZ
+- tBodyGyroJerk-XYZ
+- tBodyAccMag
+- tGravityAccMag
+- tBodyAccJerkMag
+- tBodyGyroMag
+- tBodyGyroJerkMag
+- fBodyAcc-XYZ
+- fBodyAccJerk-XYZ
+- fBodyGyro-XYZ
+- fBodyAccMag
+- fBodyAccJerkMag
+- fBodyGyroMag
+- fBodyGyroJerkMag
+
+The final dataset is comprised of variables estimated from the above features and are:
+- mean(): Mean value
+- std(): Standard deviation
+- mad(): Median absolute deviation 
+- max(): Largest value in array
+- min(): Smallest value in array
+- sma(): Signal magnitude area
+- energy(): Energy measure. Sum of the squares divided by the number of values. 
+- iqr(): Interquartile range 
+- entropy(): Signal entropy
+- arCoeff(): Autorregresion coefficients with Burg order equal to 4
+- correlation(): correlation coefficient between two signals
+- maxInds(): index of the frequency component with largest magnitude
+- meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+- skewness(): skewness of the frequency domain signal 
+- kurtosis(): kurtosis of the frequency domain signal 
+- bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+- angle(): Angle between to vectors.
+
+Additional vectors used in the angle() variable:
+- gravityMean
+- tBodyAccMean
+- tBodyAccJerkMean
+- tBodyGyroMean
+- tBodyGyroJerkMean
+
+##Explanation of the resulting data returned from run_analysis.R
+Details on how the original data was manipulated to obtain the resulting data can be found in README.md
+
+From the original dataset the mean() and std() values for each feature measurement were extracted. In the original data these values are represented for each replicate of each activity conducted by each subject. The subjects are denoted as either 'test' or 'training' to distinguish which group each subject belongs to. The resulting data represents the means of these values for the replicates of each activity for each subject.
+
+The columns in the resulting dataset are 'set' which is either 'test' or 'training', 'subject' which denotes the subject by their numeric identifier (1-30), 'activity' which denotes the type of activity and is one of the following: 'laying', 'sitting', 'standing', 'walking', 'walking down' (walking downstairs), and 'walking up' (walking upstairs). The remaining columns are the extracted features' mean() followed by the extracted features' std(), represent the means of the replicates for these values and in order are: 
+
+tBodyAccMeanX, tBodyAccMeanY, tBodyAccMeanZ, tGravityAccMeanX,    tGravityAccMeanY, tGravityAccMeanZ, tBodyAccJerkMeanX, tBodyAccJerkMeanY,   tBodyAccJerkMeanZ, tBodyGyroMeanX, tBodyGyroMeanY, tBodyGyroMeanZ,  tBodyGyroJerkMeanX, tBodyGyroJerkMeanY, tBodyGyroJerkMeanZ, tBodyAccMagMean, tGravityAccMagMean, tBodyAccJerkMagMean, tBodyGyroMagMean,    tBodyGyroJerkMagMean, fBodyAccMeanX, fBodyAccMeanY, fBodyAccMeanZ,   fBodyAccJerkMeanX, fBodyAccJerkMeanY, fBodyAccJerkMeanZ, fBodyGyroMeanX,  fBodyGyroMeanY, fBodyGyroMeanZ, fBodyAccMagMean, fBodyAccJerkMagMean, fBodyGyroMagMean, fBodyGyroJerkMagMean, tBodyAccStdX, tBodyAccStdY,    tBodyAccStdZ, tGravityAccStdX, tGravityAccStdY, tGravityAccStdZ, tBodyAccJerkStdX, tBodyAccJerkStdY, tBodyAccJerkStdZ, tBodyGyroStdX,   tBodyGyroStdY, tBodyGyroStdZ, tBodyGyroJerkStdX, tBodyGyroJerkStdY,   tBodyGyroJerkStdZ, tBodyAccMagStd, tGravityAccMagStd, tBodyAccJerkMagStd,  tBodyGyroMagStd, tBodyGyroJerkMagStd, fBodyAccStdX, fBodyAccStdY,    fBodyAccStdZ, fBodyAccJerkStdX, fBodyAccJerkStdY, fBodyAccJerkStdZ,    fBodyGyroStdX, fBodyGyroStdY, fBodyGyroStdZ, fBodyAccMagStd, fBodyAccJerkMagStd, fBodyGyroMagStd, fBodyGyroJerkMagStd
+
