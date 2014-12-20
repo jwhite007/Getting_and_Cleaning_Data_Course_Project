@@ -5,7 +5,7 @@
 [Human Activity Recognition Using Smartphones Data Set ](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 >Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
-The original data is in samsung_data.zip included in the repository
+The original data is in samsung_data.zip included in the repository. Details about the data can be found in CodeBook.md
 
 Files from the original data used in run_analysis.R
 
@@ -19,11 +19,13 @@ Files from the original data used in run_analysis.R
 
 ##The Script
 
-run_analysis.R contains a script which combines the measurements for the test and training sets and extracts the means and standard deviations for those measurements. It then outputs a text file with a tidy dataset with the mean of the extracted data for the replicates of each activity for each subject.
+run_analysis.R contains a script which combines the measurements for the test and training sets from the origianl data and extracts the means and standard deviations for those measurements. It then outputs a text file with a tidy dataset with the mean of the extracted data for the replicates of each activity for each subject.
 
 - Clone this repository and unzip the included zip file. If you've previously obtained the zip file from elsewhere, you can just download run_analyis.R into the directory which contains the uncompressed contents of the zip file.
 
 - Ensure that both run_analysis.R and the unzipped contents of the .zip file are in your working directory. The uncompressed .zip file will result in a directory named "UCI HAR Dataset" in your working directory.
+
+- Ensure that the dplyr package is installed in your R version.
 
 - From R issue "source('run_analysis.R')"
 
@@ -56,7 +58,7 @@ run_analysis.R contains a script which combines the measurements for the test an
 
 6. At this point the activity column consists of numeric identifiers as explained in the CodeBook. These identifiers in the 'activity' column are converted to descriptive identifiers such as 'walking up'.
 
-7. The sub function is then used to "clean up" the column names of the feature measurements.
+7. The sub function is then used to "clean up" the column names of the feature measurements and to make those names syntactically valid to R.
 
 8. The data rows are first sorted by 'set', then by 'subject', then by 'activity' to make the dataset more readable.
 
