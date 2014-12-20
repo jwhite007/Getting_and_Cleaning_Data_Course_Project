@@ -58,7 +58,7 @@ run_analysis.R contains a script which combines the summary values for the test 
     >identical(dfrt, dfm)  
     [1] TRUE
 
-3. The two data frames are then merged together with rbind(). Column names for the features columns are labeled with a readLines() of features.txt.
+3. The two data frames are then combined together with rbind(). Column names for the features columns are labeled with a readLines() of features.txt.
 
 4. Dplyr's chaining functionality is used to create a tidy dataset and does the following.
 
