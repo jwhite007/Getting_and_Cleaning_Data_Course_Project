@@ -1,3 +1,5 @@
+# The documentation for this script can be found in the associated README.md
+
 library(dplyr)
 
 ds_train <- data.frame(matrix(scan('UCI HAR Dataset/train/X_train.txt'),
@@ -37,4 +39,4 @@ colnames(ds) <- sub('-', '',
 
 ds <- ds[order(ds$set, ds$subject, ds$activity),]
 
-write.table(ds, 'UciHarSub.txt', row.names = FALSE)
+# write.table(ds, 'UciHarSub.txt', row.names = FALSE)
