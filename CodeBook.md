@@ -84,6 +84,24 @@ From the original dataset the mean() and std() values for each feature calculati
 - One table for each "kind" of variable
 - Multiple tables should include a column in each which allows the tables to be linked
 
+Files from the original data used in run_analysis.R:  
+Files from the Inertial Signals Directories were not used as they contain no summary data.
+
+- UCI HAR Dataset/train/X_train.txt
+    - Summary values calculated from the feature values for the training set
+- UCI HAR Dataset/test/X_test.txt
+    - Summary values calculated from the feature values for the test set
+- UCI HAR Dataset/features.txt
+    - Feature names corresponding to the summary values in X_train.txt and X_test.txt
+- UCI HAR Dataset/test/subject_test.txt
+    - The subject identifiers corresponding to their respective measures in X_test.txt
+- UCI HAR Dataset/train/subject_train.txt
+    - The subject identifiers corresponding to their respective measures in X_train.txt
+- UCI HAR Dataset/test/y_test.txt
+    - The activity identifiers corresponding to their respective measures in X_test.txt
+- UCI HAR Dataset/train/y_train.txt
+    - The activity identifiers corresponding to their respective measures in X_train.txt
+
 ###Code Book
 The columns in the resulting dataset are 'set' which is either 'test' or 'training', 'subject' which denotes the subject by their numeric identifier (1-30), 'activity' which denotes the type of activity and is one of the following: 'Laying', 'Sitting', 'Standing', 'Walking', 'WalkingDown' (walking downstairs), and 'WalkingUp' (walking upstairs). The remaining columns are the means followed by stds of the feature vectors of the 128 sample windows (the values are unitless as they were derived from feature calculations which were normalized to values bounded by [-1,1]), represent the means of the replicates for these values and in order are: 
 

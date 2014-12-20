@@ -22,7 +22,7 @@ Files from the original data used in run_analysis.R
 - UCI HAR Dataset/test/y_test.txt
     - The activity identifiers corresponding to their respective measures in X_test.txt
 - UCI HAR Dataset/train/y_train.txt
-    - The activity identifiers corresponding to their respective measures in X_train.txt
+    - The activity identifiers corresponding to their respective measures in X_train.txt  
 
 ##The Script
 
@@ -51,6 +51,10 @@ run_analysis.R contains a script which combines the summary values for the test 
     >system.time(read.table('UCI HAR Dataset/train/X_train.txt'))  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user  system elapsed  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;33.874   0.247  34.340
+
+    The column headers for a data frame constructed from a matrix will be prefixed with 'V'. The column headers for a data frame constructed with read.table will be prefixed with 'X'. After making the column names identical, one can see that the resulting data frames are identical:
+    >identical(dfrt, dfm)  
+    [1] TRUE
 
 3. The two data frames are then merged together with rbind(). Column names for the features columns are labeled with a readLines() of features.txt.
 
