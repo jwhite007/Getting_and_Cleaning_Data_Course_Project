@@ -58,7 +58,7 @@ run_analysis.R contains a script which combines the summary values for the test 
     >identical(dfrt, dfm)  
     [1] TRUE
 
-3. The two data frames are then combined together with rbind(). Column names for the features columns are labeled with a readLines() of features.txt.
+3. The two data frames are then combined into one data frame using rbind(). Column names for the features columns are labeled using readLines() on features.txt.
 
 4. Dplyr's chaining functionality is used to create a tidy dataset and does the following.
 
@@ -66,7 +66,7 @@ run_analysis.R contains a script which combines the summary values for the test 
 
     2. The select function from dplyr is used to extract only data which is the mean and std of the calculated features. Upon select the columns are orderd 'set', 'subject', 'activity' followed by the means for the various features, followed by the stds for the various features.
 
-    3. The data is grouped by set, followed by subject, followed by activity. This ensures a mean calculation of the activity replicates for each subject using summarise_each().
+    3. The data is grouped by set, followed by subject, followed by activity. This ensures a mean calculation of the activity replicates for each subject which is done next using summarise_each().
 
     4. The data is then ungrouped.
 
@@ -78,4 +78,4 @@ run_analysis.R contains a script which combines the summary values for the test 
 
 8. The data rows are first sorted by 'set', then by 'subject', then by 'activity' to make the dataset more readable.
 
-9. Finally the data is written to a text file, UciHarSub.txt, in the user's working directory. This text file can then be viewed with other software such as MicroSoft Excel (must import the text file using 'space' as a delimeter) or read back into R with a function such as read.table(). After sourcing the script, the resulting data frame, 'ds', exists in the user's workspace and can be explored from within R.
+9. Finally the data is written to a text file, UCI_HAR_Sub.txt, in the user's working directory. This text file can then be viewed with other software such as MicroSoft Excel (must import the text file using 'space' as a delimeter) or read back into R with a function such as read.table(). After sourcing the script, the resulting data frame, 'ds', exists in the user's workspace and can be explored from within R.

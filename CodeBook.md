@@ -76,7 +76,7 @@ Additional vectors used in the angle() variable:
 Details on how the original data was manipulated to obtain the resulting dataset can be found in README.md
 
 ###Study Design
-From the original dataset the mean() and std() values for each feature calculation were extracted. Summary calculations which did not have both a mean and an std were left out, i.e. meanFreq and those means used to calculate the angle() variable were not used. In the original data these values are represented for each replicate of each activity conducted by each subject. The subjects are denoted as either 'test' or 'training' to distinguish which group each subject belongs to. The resulting dataset is 'tidy' and represents the means of these values for the replicates of each activity for each subject.
+From the original dataset the mean() and std() values for each feature calculation were extracted. Summary calculations which did not have both a mean and an std were left out, i.e. meanFreq and those means used to calculate the angle() variable were not used. In the original data these values are represented for each replicate of each activity conducted by each subject. The subjects are denoted as either 'test' or 'training' to distinguish to which group each subject belongs. The resulting dataset is 'tidy' and represents the means of these values for the replicates of each activity for each subject.
 
 ####Features of a tidy dataset
 - Each variable is in one column

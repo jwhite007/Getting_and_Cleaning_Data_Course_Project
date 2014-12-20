@@ -39,4 +39,4 @@ colnames(ds) <- sub('-', '',
 
 ds <- ds[order(ds$set, ds$subject, ds$activity),]
 
-# write.table(ds, 'UciHarSub.txt', row.names = FALSE)
+write.table(ds, 'UCI_HAR_Sub.txt', row.names = FALSE)
