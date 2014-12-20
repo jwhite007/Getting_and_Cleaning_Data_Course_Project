@@ -39,7 +39,7 @@ run_analysis.R contains a script which combines the summary values for the test 
 
 - From R issue "source('run_analysis.R')"
 
-- The output will result in a dataset contained in both a data frame, ds, in your workspace and a text file, UciHarSub.txt, written to your working directory.
+- The output will result in a dataset contained in both a data frame, ds, in your workspace and a text file, UCI_HAR_Sub.txt, written to your working directory.
 
 ###Details
 1. Functions from the dplyr package are used and so dplyr is loaded.
@@ -66,7 +66,7 @@ run_analysis.R contains a script which combines the summary values for the test 
 
     2. The select function from dplyr is used to extract only data which is the mean and std of the calculated features. Upon select the columns are orderd 'set', 'subject', 'activity' followed by the means for the various features, followed by the stds for the various features.
 
-    3. The data is grouped by set, followed by subject, followed by activity. This ensures a mean calculation of the activity replicates for each subject which is done next using summarise_each().
+    3. The data is grouped by set, followed by subject, followed by activity. This ensures a mean calculation of the activity replicates for each subject which is done next using summarise_each(funs(mean)).
 
     4. The data is then ungrouped.
 
