@@ -44,7 +44,8 @@ The features obtained are denoted as such:
 - fBodyGyroMag
 - fBodyGyroJerkMag
 
-The final dataset is comprised of variables estimated from the above features and are:
+The final dataset is comprised of variables estimated from the above features. These estimated values are denoted as "summary features" in
+the documentation for run_analysis.R and are:
 
 - mean(): Mean value
 - std(): Standard deviation
@@ -76,11 +77,11 @@ Additional vectors used in the angle() variable:
 Details on how the original data was manipulated to obtain the resulting dataset can be found in README.md
 
 ###Study Design
-From the original dataset the mean() and std() values for each feature calculation were extracted. Summary calculations which did not have both a mean and an std were left out, i.e. meanFreq and those means used to calculate the angle() variable were not used. In the original data these values are represented for each replicate of each activity conducted by each subject. The subjects are denoted as either 'test' or 'training' to distinguish to which group each subject belongs. The resulting dataset is 'tidy' and represents the means of these values for the replicates of each activity for each subject.
+From the original dataset the mean() and std() values for each feature calculation were extracted. Summary calculations which did not have both a mean and an std were left out, i.e. meanFreq and those means used to calculate the angle() variable were not used. In the original data these values are represented for each replicate of each activity conducted by each subject. The subjects are denoted as either 'test' or 'training' to distinguish to which group each subject belongs. The resulting dataset is 'tidy' and represents the means of each of the values for the replicates of each activity for each subject.
 
 ####Features of a tidy dataset
 - Each variable is in one column
-- Each observational unit of each variable is in a different row
+- Each observational unit is in a different row
 - One table for each "kind" of observation
 - Multiple tables should include a column in each which allows the tables to be linked
 
