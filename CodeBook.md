@@ -81,7 +81,7 @@ From the original dataset the mean() and std() values for each feature calculati
 ####Features of a tidy dataset
 - Each variable is in one column
 - Each observational unit of each variable is in a different row
-- One table for each "kind" of variable
+- One table for each "kind" of observation
 - Multiple tables should include a column in each which allows the tables to be linked
 
 Files from the original data used in run_analysis.R:  
