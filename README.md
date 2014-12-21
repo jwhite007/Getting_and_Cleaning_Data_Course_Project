@@ -26,7 +26,7 @@ Files from the original data used in run_analysis.R
 
 ##The Script
 
-run_analysis.R contains a script which combines the summary values for the test and training sets from the origianl data and extracts the means and standard deviations of the feature calculations. It then outputs a text file with a tidy dataset with the mean of the extracted data for the replicates of each activity for each subject.
+run_analysis.R contains a script which combines the summary values for the test and training sets from the original data and extracts the means and standard deviations of the summary feature calculations. It then outputs a text file with a tidy dataset with the mean of the extracted data for the replicates of each activity for each subject.
 
 ###Instructions
 - Tested on MacOSX 10.10.1, R 3.1.2, using dplyr 0.3.0.2
