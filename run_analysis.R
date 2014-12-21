@@ -7,7 +7,7 @@ ds_train <- data.frame(matrix(scan('UCI HAR Dataset/train/X_train.txt'),
 ds_train <- cbind(set = rep('training'), ds_train)
 ds_test <- data.frame(matrix(scan('UCI HAR Dataset/test/X_test.txt'),
                              1653267 / 561, 561, byrow = TRUE))
-ds_test <- cbind(set = as.character(rep('test')), ds_test)
+ds_test <- cbind(set = rep('test'), ds_test)
 
 ntds <- rbind(ds_test, ds_train)
 colnames(ntds) <- c('set', readLines('UCI HAR Dataset/features.txt'))
