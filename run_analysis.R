@@ -54,7 +54,7 @@ summarise_each(funs(mean)) %>%
 # process:
 ungroup
 
-# Removes all intermediate data frames:
+# Removes all intermediate data frames from the user's workspace:
 rm('ds_test', 'ds_train', 'cds')
 
 # Changes the activity values from numeric identifiers to descriptive names.
