@@ -22,7 +22,7 @@ The activities in the original data are coded as numerics, and the numerics assi
 
 These signals were pre-processed and were then sampled in fixed-width sliding windows of 2.56 secs and 50% overlap (128 readings). Detailed information can be found in README.txt included with the original data.
 
-"The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ." 't' denotes time domain signals. The acceleration signals were separated into body and gravity acceleration signals. Jerk signals were derived from this data. In addition, a Fast Fourier Transform (FFT) was applied to some of these signals and are labeled with an 'f' to denote frequency domain signals. Each feature has been normalized to values bounded by [-1,1] and are therefore unitless. Detailed information can be found in features_info.txt included with the original data.
+"The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ." 't' denotes time domain signals. The acceleration signals were separated into body and gravity acceleration signals. Jerk and magnitude signals were derived from this data. In addition, a Fast Fourier Transform (FFT) was applied to some of these signals and are labeled with an 'f' to denote frequency domain signals. Each feature has been normalized to values bounded by [-1,1] and are therefore unitless. Detailed information can be found in features_info.txt included with the original data.
 
 The features obtained are denoted as such:
 
