@@ -35,7 +35,7 @@ run_analysis.R contains a script which combines the summary values for the test 
 
 - Ensure that both run_analysis.R and the unzipped contents of the zip file are in your working directory. The uncompressed zip file will result in a directory named "UCI HAR Dataset" in your working directory.
 
-- Ensure that the dplyr package is installed in your R version.
+- Ensure that the dplyr package is installed in your R version. (I have added to the script a check to see if dplyr is installed on the user's system. If not, the script installs dplyr.)
 
 - From R issue "source('run_analysis.R')"
 

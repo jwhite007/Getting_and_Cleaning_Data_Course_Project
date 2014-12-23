@@ -11,6 +11,11 @@
 # user's workspace and in the user's working directory a txt file,
 # 'UCI_HAR_Sub.txt', which contains the resulting data.
 
+# Checks to see if dplyr package is installed. Installs if not installed already:
+if (!'dplyr' %in% installed.packages()) {
+    install.packages('dplyr')
+}
+
 library(dplyr)
 
 # Puts the training data into a dataframe. Using scan() to put the values into a
